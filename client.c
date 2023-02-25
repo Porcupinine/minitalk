@@ -21,11 +21,11 @@ void send_char_by_bit(int pid, char c)
 	bit_walk = 0;
 	while (bit_walk < 8)
 	{
-		if ((c & (0x01 < bit_walk)) != 0)
+		if ((c & (0x01 << bit_walk)) != 0)
 			kill(pid, SIGUSR1);
 		else
 			kill(pid, SIGUSR2);
-		usleep(500);
+		usleep(200);
 		bit_walk++;
 	}
 }
@@ -42,13 +42,17 @@ int check_argc_argv(int argc, char **argv)
 	}
 	while (argv[1][argv_pid_count])
 	{
-		if (ft_strchr("0"
-					  "123456789", argv[1][argv_pid_count]) == 0)
+		if (ft_strchr("0123456789,", argv[1][argv_pid_count]) == 0)
 		{
 			ft_printf("ERROR! invalid PID format!\n");
 			return (1);
 		}
 		argv_pid_count++;
+	}
+	if (ft_atoi(argv[1]) == 0)
+	{
+		ft_printf("ERROR! Invalid PID!\n");
+		return (1);
 	}
 	return (0);
 }

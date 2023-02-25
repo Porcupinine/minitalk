@@ -16,19 +16,18 @@
 
 void handler(int signal)
 {
-	static int bit_size;
-	static int c;
+	static int bit_walk = 0;
+	static int c = 0;
 
-	bit_size = 0;
-	while (bit_size < 8)
+	if (signal == SIGUSR1)
+		c |= (0x01 << bit_walk);
+	bit_walk++;
+	if (bit_walk == 8)
 	{
-		if (signal == SIGUSR1)
-			c |= (0x01 << bit_size);
-		bit_size++;
+		ft_printf("%c", c);
+		bit_walk = 0;
+		c = 0;
 	}
-	ft_printf("%c", c);
-	bit_size = 0;
-	c = 0;
 }
 
 int main (void)
@@ -41,5 +40,6 @@ int main (void)
 	{
 		signal(SIGUSR1, handler);
 		signal(SIGUSR2, handler);
+		pause();
 	}
 }
