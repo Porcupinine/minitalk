@@ -1,0 +1,8 @@
+# ninja log v5
+0	18	1677238211867519043	CMakeFiles/minitalk.dir/main.c.o	1f465604d8eaa8bd
+0	20	1677242009456402561	build.ninja	fd41dfafbcfbde94
+0	17	1677238211863518942	CMakeFiles/minitalk.dir/server/server.c.o	e8abb1805048c25d
+19	41	1677238211887519539	minitalk	96499b113d111da6
+0	77	1677266943909160052	CMakeFiles/minitalk.dir/main.c.o	1f465604d8eaa8bd
+0	78	1677266943909160052	CMakeFiles/minitalk.dir/server/server.c.o	e8abb1805048c25d
+1	78	1677266943909160052	CMakeFiles/minitalk.dir/client/client.c.o	62320b51bdb3a60a

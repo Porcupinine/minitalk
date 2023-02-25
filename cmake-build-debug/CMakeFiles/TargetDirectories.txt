@@ -1,0 +1,3 @@
+/sam/Codam/minitalk/cmake-build-debug/CMakeFiles/minitalk.dir
+/sam/Codam/minitalk/cmake-build-debug/CMakeFiles/edit_cache.dir
+/sam/Codam/minitalk/cmake-build-debug/CMakeFiles/rebuild_cache.dir
