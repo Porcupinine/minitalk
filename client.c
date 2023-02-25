@@ -49,7 +49,7 @@ int check_argc_argv(int argc, char **argv)
 		}
 		argv_pid_count++;
 	}
-	if (ft_atoi(argv[1]) == 0)
+	if (kill(ft_atoi(argv[1]), 0) == -1)
 	{
 		ft_printf("ERROR! Invalid PID!\n");
 		return (1);
