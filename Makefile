@@ -10,8 +10,10 @@ CLIENT_OBJ = $(CLIENT_SRC:.c=.o)
 SERVER_OBJ = $(SERVER_SRC:.c=.o)
 
 CC = gcc
-CFLAGS = -Wall -Wextra -I$(LIBFT_PATH)/include
+CFLAGS += -g -Wall -Wextra -Werror -I$(LIBFT_PATH)/include
 LDFLAGS = -L$(LIBFT_PATH) -lft
+ASAN_FLAGS = -fsanitize=address -fno-omit-frame-pointer -Wno-format-security
+ASAN_LIBS  = -static-libasan
 
 all: $(CLIENT) $(SERVER)
 
@@ -22,10 +24,10 @@ $(SERVER): $(SERVER_OBJ) $(LIBFT_LIB)
 	$(CC) $(LDFLAGS) $^ -o $@
 
 $(CLIENT_OBJ): $(CLIENT_SRC)
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) $(ASAN_FLAGS)-c $< -o $@
 
 $(SERVER_OBJ): $(SERVER_SRC)
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) $(ASAN_FLAGS)-c $< -o $@
 
 $(LIBFT_LIB):
 	make -C $(LIBFT_PATH)

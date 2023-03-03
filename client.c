@@ -71,5 +71,6 @@ int main (int argc, char **argv)
 		send_char_by_bit(PID, argv[2][count]);
 		count++;
 	}
+	send_char_by_bit(PID, '\0');
 	return (0);
 }

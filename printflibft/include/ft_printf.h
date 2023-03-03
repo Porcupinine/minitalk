@@ -18,8 +18,6 @@
 int		ft_char(int c);
 int		ft_string(char *str);
 int		ft_pointer(unsigned long ptr);
-size_t	ft_strlen(const char *c);
-char	*ft_strchr(const char *s, int c);
 int		ft_putnbr_base(long long nbr, char*base);
 int		ft_putnbr_ulong(unsigned long long nbr, char*base);
 int		ft_printf(const char *str, ...);
