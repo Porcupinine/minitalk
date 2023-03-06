@@ -24,10 +24,10 @@ $(SERVER): $(SERVER_OBJ) $(LIBFT_LIB)
 	$(CC) $(LDFLAGS) $^ -o $@
 
 $(CLIENT_OBJ): $(CLIENT_SRC)
-	$(CC) $(CFLAGS) $(ASAN_FLAGS)-c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 $(SERVER_OBJ): $(SERVER_SRC)
-	$(CC) $(CFLAGS) $(ASAN_FLAGS)-c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 $(LIBFT_LIB):
 	make -C $(LIBFT_PATH)

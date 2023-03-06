@@ -14,7 +14,7 @@
 #include "printflibft/include/ft_printf.h"
 #include "printflibft/include/libft.h"
 
-void send_char_by_bit(int pid, char c)
+static void send_char_by_bit(int pid, char c)
 {
 	int bit_walk;
 
@@ -30,7 +30,7 @@ void send_char_by_bit(int pid, char c)
 	}
 }
 
-int check_argc_argv(int argc, char **argv)
+static int check_argc_argv(int argc, char **argv)
 {
 	int argv_pid_count;
 
